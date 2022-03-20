@@ -12,20 +12,16 @@ import javax.persistence.*;
 @ToString
 public class Facture {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String amount;
-    private String description;
-
     @ManyToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;private String amount;  private String description; 
     @JoinColumn(name = "client_id")
     private Client client;
     public Facture(){}
-
     public Facture(long id,String description,Client client){
-        this.id=id;
+        this.id=id;;
         this.description=description;
-        this.client=client;
+  this.client=client;
     }
 
     public String getAmount(){
